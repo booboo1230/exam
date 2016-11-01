@@ -3,17 +3,18 @@
 include 'includes/config.php';
 
 
+
 if (isset($_POST['pseudo'])  && ($_POST['email']) && ($_POST['mdp'])) {
 /* s'ils sont remplis je recupere les donnees */
-$pseudo = $_POST['pseudo'];
-$email = $_POST['email'];
+$titre = $_POST['pseudo'];
+$lien = $_POST['email'];
 $mdp = $_POST['mdp'];
 /* ma requete */
-$sql = "INSERT INTO utilisateurs (nom_utilisateur, email_utilisateur, mdp_utilisateur) VALUES ('$pseudo','$email','$mdp')";
+$sql = "INSERT INTO utilisateurs (nom_utilisateur, email_utilisateur, mdp_utilisateur) VALUES ('$titre','$lien','$mdp')";
 /*envoi de la requete*/
 mysqli_query($conn, $sql);
-    
-  header('Location: success.php');      
+
+  header('Location: success.php');
 
 }
 /* sinon y'a une erreur */
